@@ -48,6 +48,9 @@ public class Lox {
     List<Token> tokens = scanner.scanTokens();
 
     // For now, just print the tokens.
+    System.out.println("-------------------------");
+    System.out.println("type|lexeme|literal");
+    System.out.println("-------------------------");
     for (Token token : tokens) {
       System.out.println(token);
     }

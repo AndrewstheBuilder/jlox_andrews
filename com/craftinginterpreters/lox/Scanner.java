@@ -35,11 +35,11 @@ public class Scanner {
         keywords.put("while", WHILE);
     }
 
-    Scanner(String source) {
+    public Scanner(String source) {
         this.source = source;
     }
 
-    List<Token> scanTokens() {
+    public List<Token> scanTokens() {
         while (!isAtEnd()) {
             // We are at the beginning of the next lexeme.
             start = current;

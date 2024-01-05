@@ -1,10 +1,14 @@
 package com.craftinginterpreters.lox;
 
-import com.craftinginterpreters.lox.Expr.Vistor;
+import com.craftinginterpreters.lox.Expr.Visitor;
 
-public class AstPrinter implements Vistor<String> {
-    String print(Expr expr) {
-        expr.accept(this);
+public class AstPrinter implements Visitor<String> {
+    public AstPrinter() {
+
+    }
+
+    public String print(Expr expr) {
+        return expr.accept(this);
     }
 
     @Override
@@ -49,7 +53,7 @@ public class AstPrinter implements Vistor<String> {
             new Token(TokenType.STAR, "*", null, 1),
             new Expr.Grouping(
                 new Expr.Literal(45.67)));
-
+        System.out.println("From ASTPRINTER");
         System.out.println(new AstPrinter().print(expression));
     }
 }
